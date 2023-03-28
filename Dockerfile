@@ -26,10 +26,10 @@ RUN cd && \
   apk --update upgrade --no-cache && \
   # Install iptables
   apk --update add --no-cache iptables && \
-  # Set DNSs
-  echo -e "# Generated from Dockerfile\n\
-  nameserver ${DNS_SERVERS1}\n\
-  nameserver ${DNS_SERVERS2}\n" | sed -e 's/^\s\+//g' | tee /etc/resolv.conf && \
+  # Set DNSs (changing resolv.conf is not allow when building docker container and need to remove these session)
+  #echo -e "# Generated from Dockerfile\n\
+  #nameserver ${DNS_SERVERS1}\n\
+  #nameserver ${DNS_SERVERS2}\n" | sed -e 's/^\s\+//g' | tee /etc/resolv.conf && \
   # Install build dependencies packages
   apk add --no-cache --virtual .build-deps \
   curl \
