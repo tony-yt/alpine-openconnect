@@ -4,7 +4,7 @@ openconnect server (ocserv) for Docker (VPN/Proxy)
 
 ## Build a docker image
 ```bash
-git clone https://github.com/WUAmin/alpine-openconnect.git
+git clone https://github.com/tony-yt/alpine-openconnect.git
 cd alpine-openconnect/
 docker build --tag=alpine-openconnect .
 ```
